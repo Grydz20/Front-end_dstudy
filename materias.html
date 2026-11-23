@@ -7,6 +7,8 @@
 
     <link rel="stylesheet" href="css/global.css">
     <link rel="stylesheet" href="css/materias.css">
+    <link rel="stylesheet" href="css/menu.css">
+    
 </head>
 <body>
 
@@ -135,6 +137,44 @@
     <footer class="rodape-areia">
         <img src="assets/img/fundo.png" alt="Cenário de areia e plantas" class="img-rodape">
     </footer>
+    <!-- ==============================
+         MENU (abre abaixo do botão #btn-menu)
+         O Paulo alterna a classe "aberto" neste <nav>
+         ============================== -->
+    <nav class="menu-lateral" id="menu-lateral" aria-label="Menu principal" aria-hidden="true">
+        <img src="assets/img/axolotelogodark.png" alt="" class="menu-mascote">
+
+        <ul class="menu-lista">
+            <li>
+                <a href="materias.html" class="menu-item" id="menu-study">
+                    <img src="assets/img/iconlivros.png" alt="" class="menu-icone">
+                    <span class="menu-texto">STUDY</span>
+                </a>
+            </li>
+            <li>
+                <a href="sobre.html" class="menu-item" id="menu-sobre">
+                    <img src="assets/img/iconsobre.png" alt="" class="menu-icone">
+                    <span class="menu-texto">SOBRE</span>
+                </a>
+            </li>
+            <li>
+                <a href="apoio.html" class="menu-item" id="menu-apoio">
+                    <img src="assets/img/iconcoracao.png" alt="" class="menu-icone">
+                    <span class="menu-texto">APOIO</span>
+                </a>
+            </li>
+            <!-- CONFIG.: apague este <li> inteiro se a opção sair do projeto -->
+            <li>
+                <a href="#" class="menu-item" id="menu-config">
+                    <img src="assets/img/iconengrenagem.png" alt="" class="menu-icone">
+                    <span class="menu-texto">CONFIG.</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+
+    <!-- Camada transparente: fecha o menu ao clicar fora dele -->
+    <div class="menu-fundo" id="menu-fundo"></div>
 
 </body>
 </html>
