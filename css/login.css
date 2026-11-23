@@ -2,11 +2,7 @@
    DSTUDY — PÁGINA DE LOGIN
    ============================================================ */
 
-<<<<<<< HEAD
 /* ---------- Bolhas (fundo decorativo) ---------- */
-=======
-/* ---------- Bolhas ---------- */
->>>>>>> 33311659d9526493a94d473ded5cd0a08eaf468b
 .bolhas {
     position: absolute;
     inset: 0;
@@ -22,16 +18,9 @@
     image-rendering: pixelated;
 }
 
-<<<<<<< HEAD
 .bolhapequena { width: 28px; }
 .bolhamedia   { width: 60px; }
 .bolhagrande  { width: 105px; }
-=======
-/* ---------- Tamanhos das bolhas (proporcionais) ---------- */
-.bolhapequena { width: 22px; }
-.bolhamedia   { width: 48px; }
-.bolhagrande  { width: 84px; }
->>>>>>> 33311659d9526493a94d473ded5cd0a08eaf468b
 
 /* Pequenas */
 .bolha-1  { top: 5%;   left: 15%;  }
@@ -50,7 +39,6 @@
 /* Grandes */
 .bolha-11 { top: 15%;  left: 85%;  }
 .bolha-12 { top: 80%;  left: 85%;  }
-<<<<<<< HEAD
 .bolha-13 { top: 70%;  left: 12%;  } /* Bolha grande à esquerda (como no print) */
 
 /* Médias (novas) */
@@ -64,18 +52,6 @@
 .topo {
     position: absolute;
     top: 45px;
-=======
-.bolha-13 { top: 70%;  left: 12%;  }
-
-/* Novas médias */
-.bolha-15 { top: 20%;  left: 45%;  }
-.bolha-16 { top: 75%;  left: 65%;  }
-
-/* ---------- Logo ---------- */
-.topo {
-    position: absolute;
-    top: 30px;
->>>>>>> 33311659d9526493a94d473ded5cd0a08eaf468b
     left: 50%;
     transform: translateX(-50%);
     z-index: 10;
@@ -88,56 +64,37 @@
 }
 
 .logo-icone {
-<<<<<<< HEAD
     height: 96px;
-=======
-    height: 72px;
->>>>>>> 33311659d9526493a94d473ded5cd0a08eaf468b
     width: auto;
     image-rendering: pixelated;
 }
 
 .logo-texto {
     font-family: 'PearSoda', monospace;
-<<<<<<< HEAD
     font-size: 68px;
-=======
-    font-size: 52px;
->>>>>>> 33311659d9526493a94d473ded5cd0a08eaf468b
     color: #FFF8F0;
     letter-spacing: 2px;
     margin-top: 5px;
 }
 
-<<<<<<< HEAD
 /* ============================================================
    CONTEÚDO CENTRAL E FORMULÁRIO
    ============================================================ */
-=======
-/* ---------- Conteúdo e Formulário ---------- */
->>>>>>> 33311659d9526493a94d473ded5cd0a08eaf468b
 .login-conteudo {
     position: relative;
     z-index: 5;
     min-height: 100vh;
     display: flex;
-<<<<<<< HEAD
     align-items: center;     /* Centraliza verticalmente */
     justify-content: center; /* Centraliza horizontalmente */
     
     /* Removemos o padding-top grande. Deixamos um padding mínimo 
        apenas para segurança em telas muito pequenas */
     padding: 20px; 
-=======
-    align-items: center;
-    justify-content: center;
-    padding: 100px 20px 40px;
->>>>>>> 33311659d9526493a94d473ded5cd0a08eaf468b
 }
 
 .form-login {
     width: 100%;
-<<<<<<< HEAD
     max-width: 500px;
     display: flex;
     flex-direction: column;
@@ -146,12 +103,6 @@
     /* Removemos o margin-top negativo. Agora o Flexbox vai 
        posicionar o bloco inteiro exatamente no centro */
     margin-top: 0; 
-=======
-    max-width: 480px;
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
->>>>>>> 33311659d9526493a94d473ded5cd0a08eaf468b
 }
 
 .grupo-campo {
@@ -161,35 +112,23 @@
 }
 
 label {
-<<<<<<< HEAD
     font-size: 24px;
-=======
-    font-size: 20px;
->>>>>>> 33311659d9526493a94d473ded5cd0a08eaf468b
     color: #FFF8F0;
     letter-spacing: 1px;
     padding-left: 4px;
 }
 
-<<<<<<< HEAD
 /* ---------- Inputs com imagem de fundo ---------- */
 .input-pixel {
     width: 100%;
     height: 72px;
     padding: 0 24px;
 
-=======
-.input-pixel {
-    width: 100%;
-    height: 60px;
-    padding: 0 20px;
->>>>>>> 33311659d9526493a94d473ded5cd0a08eaf468b
     background-image: url('../assets/img/caixabolha.png');
     background-size: 100% 100%;
     background-repeat: no-repeat;
     background-position: center;
     background-color: transparent;
-<<<<<<< HEAD
 
     border: none;
     outline: none;
@@ -200,16 +139,6 @@ label {
 }
 
 /* Tratamento do Autofill (mesmo do Cadastro) */
-=======
-    border: none;
-    outline: none;
-    font-family: 'PearSoda', monospace;
-    font-size: 24px;
-    color: #FFF8F0;
-}
-
-/* Autofill */
->>>>>>> 33311659d9526493a94d473ded5cd0a08eaf468b
 .input-pixel:-webkit-autofill,
 .input-pixel:-webkit-autofill:hover,
 .input-pixel:-webkit-autofill:focus,
@@ -229,12 +158,8 @@ label {
     border: none !important;
 }
 
-<<<<<<< HEAD
 
 /* ---------- Botão ---------- */
-=======
-/* Botão */
->>>>>>> 33311659d9526493a94d473ded5cd0a08eaf468b
 .btn {
     display: flex;
     align-items: center;
@@ -242,7 +167,6 @@ label {
     text-align: center;
     text-decoration: none;
     font-family: 'PearSoda', monospace;
-<<<<<<< HEAD
     font-size: 26px;
     line-height: 1.6;
     color: #FFFFFF;
@@ -253,16 +177,6 @@ label {
     max-width: 320px;
     margin: 24px auto 0;
 
-=======
-    font-size: 24px;
-    line-height: 1.6;
-    color: #FFFFFF;
-    text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.3);
-    padding: 16px 28px;
-    width: 100%;
-    max-width: 300px;
-    margin: 20px auto 0;
->>>>>>> 33311659d9526493a94d473ded5cd0a08eaf468b
     background-size: 100% 100%;
     background-repeat: no-repeat;
     background-position: center;
@@ -272,7 +186,6 @@ label {
     transition: transform 0.08s ease, filter 0.15s ease;
 }
 
-<<<<<<< HEAD
 .btn-rosa {
     background-image: url('../assets/img/botaorosa.png');
 }
@@ -343,41 +256,11 @@ label {
 
     .logo-icone { height: 48px; }
     .logo-texto { font-size: 36px; }
-=======
-.btn-rosa { background-image: url('../assets/img/botaorosa.png'); }
-
-.btn:hover { filter: brightness(1.1); }
-.btn:active { transform: translateY(4px); }
-
-/* ---------- Responsividade ---------- */
-@media (max-width: 1024px) {
-    .form-login { max-width: 450px; }
-    .input-pixel { height: 56px; font-size: 22px; }
-    .btn { font-size: 22px; padding: 14px 24px; max-width: 280px; }
-    .logo-icone { height: 64px; }
-    .logo-texto { font-size: 44px; }
-}
-
-@media (max-width: 768px) {
-    .login-conteudo {
-        padding: 100px 20px 40px;
-        min-height: auto;
-    }
-    .form-login { gap: 16px; max-width: 100%; }
-    label { font-size: 16px; }
-    .input-pixel { height: 48px; font-size: 18px; padding: 0 14px; }
-    .btn { font-size: 18px; padding: 12px 20px; max-width: 100%; margin-top: 16px; }
-    .logo-icone { height: 40px; }
-    .logo-texto { font-size: 30px; }
->>>>>>> 33311659d9526493a94d473ded5cd0a08eaf468b
 
     .bolhapequena { width: 20px; }
     .bolhamedia   { width: 40px; }
     .bolhagrande  { width: 70px; }
-<<<<<<< HEAD
 
     /* Esconde bolhas para não poluir no celular */
-=======
->>>>>>> 33311659d9526493a94d473ded5cd0a08eaf468b
     .bolha-7, .bolha-9, .bolha-11, .bolha-13 { display: none; }
 }
