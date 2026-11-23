@@ -1,22 +1,6 @@
 /* ============================================================
    DSTUDY — HOME INICIAL
    ============================================================ */
-/* ============================================================
-   FONTE PEARSODA
-   ============================================================ */
-@font-face {
-    font-family: 'PearSoda';
-    src: url('../fonts/PearSoda.ttf') format('truetype');
-    font-weight: normal;
-    font-style: normal;
-    font-display: swap;
-}
-/* ---------- Reset básico ---------- */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
 
 /* ---------- Corpo da página ---------- */
 body {

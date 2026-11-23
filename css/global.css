@@ -1,0 +1,27 @@
+/* ============================================================
+   DSTUDY — ESTILOS GLOBAIS (Fonte, Paleta, Reset)
+   ============================================================ */
+
+@font-face {
+    font-family: 'PearSoda';
+    src: url('../fonts/PearSoda.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    background-color: #1A1234; /* Fundo oficial */
+    font-family: 'PearSoda', monospace;
+    color: #FFF8F0; /* Texto oficial */
+    overflow: hidden;          
+    position: relative;
+}
