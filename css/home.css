@@ -1,252 +1,244 @@
 /* ============================================================
-   DSTUDY — HOME INICIAL
+   DSTUDY — HOME
+   --u = 1px do Figma (frame ~1434px), escala com a tela
    ============================================================ */
+:root {
+    --u: clamp(0.84px, calc(100vw / 1434 * 0.9), 1.44px);
+
+    /* Largura do PNG do axolote, em u.
+       O axolote visível tem ~382u, mas o PNG costuma ter margem transparente.
+       Se ficar menor/maior que o Figma, ajuste só este número. */
+    --axolote-w: 540;
+}
 
 /* ---------- Corpo da página ---------- */
 body {
-    min-height: 100vh;
-    background-color: #1A1234;; 
-    font-family: 'PearSoda', monospace;  /* trocado */
-    color: #FFF8F0;;
-    overflow: hidden;          
     position: relative;
+    min-height: 100vh;
+    background-color: #1A1234;
+    font-family: 'PearSoda', monospace;
+    color: #FFF8F0;
+    overflow-x: hidden;
+    overflow-y: auto;
 }
 
 /* ============================================================
-   BOLHAS DECORATIVAS
+   BOLHAS DECORATIVAS (posições em % do frame do Figma)
    ============================================================ */
-
 .bolhas {
     position: absolute;
-    inset: 0;              
-    pointer-events: none;  
+    inset: 0;
+    pointer-events: none;
     overflow: hidden;
     z-index: 1;
 }
 
 .bolha {
     position: absolute;
-    height: auto;          
+    height: auto;
     opacity: 0.9;
-    image-rendering: pixelated; 
+    image-rendering: pixelated;
 }
 
-/* ---------- Tamanhos ---------- */
-.bolhapequena { width: 28px;  } /* Um pouco menores para distribuir melhor */
-.bolhamedia   { width: 60px;  }
-.bolhagrande  { width: 105px; }
+.bolhapequena { width: calc(20 * var(--u)); }
+.bolhamedia   { width: calc(40 * var(--u)); }
+.bolhagrande  { width: calc(76 * var(--u)); }
 
-/* ---------- Distribuição Equilibrada (Esquerda, Direita, Topo, Base) ---------- */
+/* Pequenas */
+.bolha-1  { top: 7.8%;  left: 6.2%;  }
+.bolha-2  { top: 22.3%; left: 15.4%; }
+.bolha-3  { top: 54.3%; left: 1.3%;  }
+.bolha-4  { top: 75.2%; left: 12.7%; }
+.bolha-5  { top: 0.8%;  left: 69%;   }
+.bolha-6  { top: 32.4%; left: 48.4%; }
+.bolha-7  { top: 35.7%; left: 83.3%; }
+.bolha-8  { top: 64.9%; left: 90.1%; }
 
-/* -- PEQUENAS (Espalhadas por toda a tela) -- */
-.bolha-1  { top: 10%;  left: 6%;   } /* Topo Esquerda */
-.bolha-2  { top: 15%;  left: 88%;  } /* Topo Direita */
-.bolha-3  { top: 35%;  left: 3%;   } /* Meio Esquerda */
-.bolha-4  { top: 30%;  left: 95%;  } /* Meio Direita */
-.bolha-5  { top: 85%;  left: 12%;  } /* Base Esquerda */
-.bolha-6  { top: 80%;  left: 85%;  } /* Base Direita */
+/* Médias */
+.bolha-9  { top: 6.9%;  left: 65%;   }
+.bolha-10 { top: 37.2%; left: 4.1%;  }
+.bolha-11 { top: 47.6%; left: 45.6%; }
+.bolha-12 { top: 67.3%; left: 59.4%; }
+.bolha-13 { top: 42.3%; left: 79.3%; }
+.bolha-14 { top: 74%;   left: 92.2%; }
+.bolha-15 { top: 11.2%; left: 90.9%; }
+.bolha-16 { top: 84.6%; left: 26.9%; }
 
-/* -- MÉDIAS -- */
-.bolha-7  { top: 8%;   left: 40%;  } /* Topo Centro (cuidando para não bater na logo) */
-.bolha-8  { top: 45%;  left: 50%;  } /* Meio  */
-.bolha-9  { top: 70%;  left: 8%;   } /* Meio/Base Esquerda */
-.bolha-10 { top: 90%;  left: 45%;  } /* Base Centro */
-
-/* -- GRANDES -- */
-.bolha-11 { top: 5%;   left: 92%;  } /* Topo Extrema Direita */
-.bolha-12 { top: 85%;  left: 92%;  } /* Base Extrema Direita */
-.bolha-13 { top: 18%;  left: 25%;  } /* Topo Esquerda (perto da logo) */
+/* Grandes */
+.bolha-17 { top: 58.2%; left: 12.2%; }
+.bolha-18 { top: 78%;   left: 66.4%; }
 
 /* ============================================================
    LOGO
+   axolote e texto têm posição própria (em u, a partir do canto
+   superior esquerdo da tela), então dá para ajustar cada um sozinho.
    ============================================================ */
-
 .topo {
     position: absolute;
-    top: 24px;
-    left: 32px;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 0;
     z-index: 10;
 }
 
 .logo {
-    height: 72px;
+    position: absolute;
+    left: calc(17 * var(--u));
+    top: calc(-1 * var(--u));
+    height: calc(75 * var(--u));
     width: auto;
     image-rendering: pixelated;
 }
 
-/* ============================================================
-   CONTEÚDO CENTRAL (Centralização Otimizada)
-   ============================================================ */
+.logo-texto {
+    position: absolute;
+    left: calc(99 * var(--u));
+    top: calc(20 * var(--u));
+    font-size: calc(38 * var(--u));
+    line-height: 1;
+    white-space: nowrap;
+    color: #FFF8F0;
+}
 
+/* ============================================================
+   CONTEÚDO CENTRAL
+   ============================================================ */
 .home-conteudo {
     position: relative;
     z-index: 5;
+    box-sizing: border-box;
     min-height: 100vh;
     display: flex;
     align-items: center;
-    justify-content: center; /* Centraliza horizontalmente */
-    gap: 80px;
-    padding: 0 40px; /* Remove o padding extra do topo para centralizar perfeitamente na vertical */
+    justify-content: center;
+    padding: 0 20px calc(64 * var(--u)); /* sobe o conjunto, como no Figma */
 }
 
-/* ---------- Axolote ---------- */
+/* ---------- Axolote ----------
+   A caixa tem o tamanho do axolote VISÍVEL; o PNG fica centralizado dentro dela.
+   Assim o layout não depende da margem transparente da imagem. */
 .axolote-area {
-    flex-shrink: 0;
-    /* Um pequeno ajuste para compensar a assimetria da imagem do axolote */
-    margin-top: -40px; 
+    position: relative;
+    flex: none;
+    width: calc(382 * var(--u));
+    height: calc(561 * var(--u));
+    margin-right: calc(-62 * var(--u)); /* texto encosta no axolote, como no Figma */
 }
 
 .axolote {
-    width: 100%;
-    max-width: 650px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: calc(var(--axolote-w) * var(--u));
+    max-width: none;
     height: auto;
     image-rendering: pixelated;
 }
 
-/* ---------- Bloco de texto + botões ---------- */
+/* ---------- Frase + botões ---------- */
 .apresentacao {
-    max-width: 480px;
+    position: relative;
+    z-index: 2;
     display: flex;
     flex-direction: column;
-    gap: 40px;
+    align-items: flex-start;
+    gap: calc(20 * var(--u));
+    margin-top: calc(-42 * var(--u));
 }
 
 .frase {
-    font-size: 28px; 
-    line-height: 1.8;
-    letter-spacing: 1px;
+    margin: 0;
+    font-weight: normal;
+    font-size: calc(40 * var(--u));
+    line-height: calc(50 * var(--u));
     text-align: left;
     color: #FFF8F0;
-    text-shadow: 2px 2px 0 rgba(0, 0, 0, 0.35);
 }
 
 /* ---------- Botões ---------- */
 .botoes {
     display: flex;
     flex-direction: column;
-    gap: 24px;
-    max-width: 320px;
+    gap: calc(19 * var(--u));
+    width: calc(320 * var(--u));
+    align-self: center; /* centralizados sob a frase */
 }
 
 .btn {
     display: flex;
     align-items: center;
     justify-content: center;
+    box-sizing: border-box;
+    width: 100%;
+    height: calc(72 * var(--u));
+    padding: 0;
     text-align: center;
     text-decoration: none;
-    font-family: 'PearSoda', monospace;  /* trocado */
-    font-size: 24px;
-    line-height: 1.6;
+    font-family: 'PearSoda', monospace;
+    font-size: calc(36 * var(--u));
+    line-height: 1;
     color: #FFFFFF;
     text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.3);
-    
-    padding: 24px 32px;
-    width: 100%;
-    
+
     background-size: 100% 100%;
     background-repeat: no-repeat;
     background-position: center;
-    border: none; 
+    image-rendering: pixelated;
+    border: none;
     cursor: pointer;
     transition: transform 0.08s ease, filter 0.15s ease;
 }
 
-.btn-rosa {
-    background-image: url('../assets/img/botaorosa.png');
-}
+.btn-rosa { background-image: url('../assets/img/botaorosa.png'); }
+.btn-roxo { background-image: url('../assets/img/botaoroxo.png'); }
 
-.btn-roxo {
-    background-image: url('../assets/img/botaoroxo.png');
-}
-
-.btn:hover {
-    filter: brightness(1.1);
-}
-
-.btn:active {
-    transform: translateY(4px);
-}
+.btn:hover  { filter: brightness(1.1); }
+.btn:active { transform: translateY(4px); }
 
 /* ============================================================
    RESPONSIVIDADE
    ============================================================ */
 
+/* ---------- Tablet: mantém lado a lado, escala maior ---------- */
 @media (max-width: 1024px) {
-    .home-conteudo {
-        gap: 40px;
+    :root {
+        --u: calc(100vw / 1100 * 0.9);
     }
-
-    .axolote {
-        max-width: 450px;
-    }
-
-    .frase {
-        font-size: 22px;
-    }
-
-    .btn {
-        font-size: 18px;
-        padding: 18px 24px;
-    }
-    
-    /* Ajuste fino de algumas bolhas em telas menores */
-    .bolha-7 { top: 15%; left: 30%; }
-    .bolha-13 { display: none; } /* Remove a bolha 13 se começar a bater na logo */
 }
 
-@media (max-width: 768px) {
-    body {
-        overflow-y: auto;
+/* ---------- Celular: axolote em cima, texto e botões abaixo ---------- */
+@media (max-width: 700px) {
+    :root {
+        --u: min(calc(100vw / 480 * 0.9), 0.9px);
     }
 
     .home-conteudo {
         flex-direction: column;
-        gap: 24px;
-        padding: 100px 20px 40px;
-        min-height: auto;
-        text-align: center;
+        justify-content: flex-start;
+        gap: calc(10 * var(--u));
+        padding: calc(110 * var(--u)) 20px calc(80 * var(--u));
     }
 
     .axolote-area {
-        margin-top: 0; 
+        margin-right: 0;
     }
 
     .apresentacao {
         align-items: center;
+        margin-top: 0;
+        gap: calc(30 * var(--u));
     }
 
     .frase {
-        font-size: 18px;
+        font-size: calc(32 * var(--u));
+        line-height: calc(44 * var(--u));
         text-align: center;
-        line-height: 2;
     }
-
-    .botoes {
-        width: 100%;
-        align-items: center;
-    }
-
-    .btn {
-        width: 100%;
-        max-width: 280px;
-        font-size: 16px;
-        padding: 16px 20px;
-    }
-
-    .axolote {
-        max-width: 280px;
-    }
-
-    .logo {
-        height: 36px;
-    }
-
-    .bolhapequena { width: 20px; }
-    .bolhamedia   { width: 40px; }
-    .bolhagrande  { width: 70px; }
 
     .bolha { opacity: 0.5; }
-    
-    /* Esconde algumas bolhas no celular para não poluir */
-    .bolha-7, .bolha-10, .bolha-13 { display: none; }
+
+    /* Esconde as bolhas do centro para não cobrir o conteúdo */
+    .bolha-6, .bolha-11, .bolha-12 { display: none; }
 }
